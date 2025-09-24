@@ -3,6 +3,14 @@
 const inputs = document.querySelectorAll('form input');
 
 inputs.forEach(input => {
+    if (!input.name || !input.name.trim()) {
+    return;
+  }
+
+  if (!input.id) {
+    input.id = `${input.name}-${index}`;
+  }
+
 
   const labelText = input.name.charAt(0).toUpperCase() + input.name.slice(1);
 
